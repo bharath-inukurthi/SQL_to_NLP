@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+notebooks/__pycache__/
+
+# IDE configs
+.idea/
+notebooks/.idea/
+
+# Environment and config files
+config.yaml
+notebooks/.env
+
+# Temp files
+temp.pdf
+
+# Data files
+notebooks/ciruclars_memory_ids.csv
+notebooks/ciruclars_memory_ids.txt
+
+
+notebooks/circular.ipynb
+notebooks/chatbot.ipynb
+
+
+# Folders to ignore
+notebooks/attachments/
+notebooks/circulars/
+notebooks/low-traffic/
+notebooks/Kare-chat-bot/
