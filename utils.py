@@ -1,3 +1,4 @@
+import os
 
 from langchain.prompts import (ChatPromptTemplate,
                                 SystemMessagePromptTemplate,
@@ -276,7 +277,7 @@ def RAG(input_query):
     )
     final_prompt = ChatPromptTemplate.from_messages([sys_template, few_shots, user_template])
     llm = GoogleGenerativeAI(model="gemini-2.0-flash-001", temperature=0.2,
-                             google_api_key="AIzaSyBm-SRGDCvtRF3aAPRqpmI0oZ9J_9mtU4o")
+                             google_api_key=os.getenv("gemini_api"))
     DATABASE_URL = "mysql+pymysql://root:99230040570@localhost/faculty_meet"
     db = SQLDatabase.from_uri(DATABASE_URL)
     input_mapping = RunnableLambda(lambda x: {"input": x,
