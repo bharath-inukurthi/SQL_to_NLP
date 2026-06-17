@@ -1,21 +1,60 @@
+# 🤖 Kare Bot — Natural Language Faculty Search
 
-# SQL_to_NLP
+> An AI-powered system that transforms university timetable PDFs into a searchable knowledge base, allowing students to query faculty availability using natural language.
 
-This repository contains the source code for the Kare Bot API, a chatbot designed to answer queries based on information retrieved from a SQL database using Retrieval-Augmented Generation (RAG).  The API is built using FastAPI and leverages Google's Gemini Pro model for natural language generation.
+## 🚀 The Problem
 
-## Overview
+Faculty schedules were distributed across multiple timetable PDFs.
 
-The Kare Bot API provides a simple interface for interacting with a chatbot that can answer questions about a specific dataset stored in a SQL database.  It uses a RAG pipeline to retrieve relevant information from the database based on the user's query and then uses a large language model (LLM) to generate a natural language response.  Few-shot learning is employed via a Chroma vector database to improve the quality of the SQL query generation.
+Finding answers to questions such as:
 
-## Features
+* "When is Dr. Kumar free today?"
+* "Where can I meet my DBMS faculty tomorrow?"
+* "Who is teaching in Lab 3 right now?"
 
-*   **RAG Pipeline:** Implements a Retrieval-Augmented Generation pipeline for answering user queries.
-*   **SQL Database Integration:** Connects to a SQL database to retrieve relevant information.
-*   **Google Gemini Pro:** Utilizes Google's Gemini Pro model for natural language generation.
-*   **FastAPI:** Built using the FastAPI framework for high performance and ease of use.
-*   **Few-Shot Learning:** Uses a Chroma vector database to store and retrieve examples for few-shot learning, enhancing SQL query generation accuracy.
-*   **Semantic Similarity Example Selection:** Employs semantic similarity to select the most relevant examples from the Chroma vector database.
-*   **Environment Variable Configuration:** Relies on environment variables for sensitive information like API keys and database URLs.
-*   **Logging:** Implements detailed logging for debugging and monitoring.
-*   **Date/Time Handling:** Includes sophisticated date/time handling to allow users to ask questions relative to today.
-*   **Clear Error Handling:**  Provides user-friendly error messages when data is not available or issues occur.
+required manually searching through numerous timetable documents.
+
+## 💡 The Solution
+
+Kare Bot automatically converts timetable PDFs into a structured relational database and enables natural language search over that data.
+
+```text
+Timetable PDFs
+       ↓
+PDF Parsing & Information Extraction
+       ↓
+Relational Database Generation
+       ↓
+Natural Language Query
+       ↓
+LLM → SQL Translation
+       ↓
+Database Retrieval
+       ↓
+Human-Friendly Response
+```
+
+## ✨ Key Features
+
+* 📄 Automated timetable PDF parsing
+* 🏗️ Dynamic SQL schema generation
+* 🤖 Natural Language → SQL conversion
+* 🧠 Semantic few-shot example retrieval using ChromaDB
+* 🔍 Retrieval-Augmented Query Generation
+* 📅 Relative date understanding (Today, Tomorrow, Day After Tomorrow)
+* ⚡ Faculty availability and timetable search
+* 🔐 User authentication and access control
+
+## 🛠️ Tech Stack
+
+**Python • LangChain • Gemini • ChromaDB • MySQL • SQLAlchemy • Streamlit**
+
+## 🎯 Impact
+
+Instead of manually searching through dozens of timetable PDFs, students can simply ask:
+
+> "When is my faculty available?"
+
+and receive an instant answer generated from structured timetable data.
+
+This project was built to learn LLMs, LangChain, RAG pipelines, vector databases, and Text-to-SQL systems while solving a real problem faced by students on campus.
